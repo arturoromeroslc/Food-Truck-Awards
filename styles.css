@@ -1,0 +1,48 @@
+
+
+/*
+Navigation
+*/
+nav {
+	height: 56px;
+  line-height: 56px;
+}
+
+.text-center {
+	text-align: center;
+}
+.border-dash {
+	border: 2px dashed #4183c4;
+	padding: 2px;
+}
+.blue-green {
+	background-color: #063053;
+}
+.blue-grey {
+	background-color: #fff;
+}
+.blue-font {
+	color: #4183c4;
+}
+/*
+Section -- Images
+*/
+.off-white {
+	color: #f7f7f7;
+}
+
+/*
+Guts
+*/
+.padding-all-1_25 {
+	padding: 1.25rem;
+}
+
+
+
+/*
+Defaults
+*/
+a {
+	text-decoration: none;
+}
