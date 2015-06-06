@@ -2,7 +2,9 @@
 	'use strict';
 	angular
     .module('foodTruckApp')
-		.controller('InstagramFeedCtrl', function InstagramFeedCtrl($scope, $log, $location, $routeParams, MainService) {
+		.controller('InstagramFeedCtrl', 
+
+	function InstagramFeedCtrl($scope, $log, $location, $routeParams, MainService) {
 
 			$scope.getInstagramFeed = function(userId) {
 				MainService.getInstagramFeed(userId)

@@ -1,19 +1,19 @@
-	<!--ng-controller="MainCtrl"-->
+<!--ng-controller="MainCtrl"-->
 <section class="text-center padding-all-1_25 off-white">
 	<div>
 		<a ng-href="#/feed/{{cupbopData.username}}"><img ng-src="{{cupbopData.profile_picture}}" alt="{{cupbopData.full_name}}" /></a>
 		<h2>{{cupbopData.full_name}}</h2>
 		<p>{{cupbopData.bio}}</p>
-		<div>
-			<a href=""><h1 class="small-round-button">+1</h1></a>
+		<div ng-controller="VoteCtrl">
+			<a ng-click="logClick()"><h1 class="small-round-button">+1</h1></a>
 		</div>
 	</div>
 	<div>
 		<a ng-href="#/feed/{{waffluvData.username}}"><img ng-src="{{waffluvData.profile_picture}}" alt="{{waffluvData.full_name}}" /></a>
 		<h2>{{waffluvData.full_name}}</h2>
 		<p>{{waffluvData.bio}}</p>
-			<div>
-			<a href=""><h1 class="small-round-button">+1</h1></a>
+		<div ng-controller="VoteCtrl">
+			<a ng-click="logClick()"><h1 class="small-round-button">+1</h1></a>
 		</div>
 	</div>
 </section>

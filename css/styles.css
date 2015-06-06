@@ -4,6 +4,7 @@ Defaults
 a {
 	text-decoration: none;
 	color: rgb(64, 148, 244);
+	cursor: pointer;
 }
 
 /*****************

@@ -1,6 +1,8 @@
 (function() {
 	angular
-		.module('foodTruckApp', ['ngRoute'])
+		.module('foodTruckApp', [
+			'ngRoute'
+		])
 		.config(function($routeProvider) {
 			$routeProvider
 				
