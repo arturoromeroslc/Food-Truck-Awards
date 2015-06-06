@@ -16,6 +16,8 @@
 
 		$scope.getInstagramUser();
 
+		$scope.username = 1;
+
 
 	});   
 }());    

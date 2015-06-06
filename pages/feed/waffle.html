@@ -1,0 +1,7 @@
+<section ng-controller="InstagramFeedCtrl" class="text-center padding-all-1_25 off-white">
+	<h2>This is Waffle Luv's Feed!!</h2>
+	<h4>See all of our photos</h4>
+	<div>
+		<img ng-repeat="feed in feedData" ng-src="{{feed.images.thumbnail.url}}"/>
+	</div>
+</section>
