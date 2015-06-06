@@ -5,7 +5,7 @@
 			$routeProvider
 				
 				.when('/main', {
-					templateUrl: '/pages/main/main.html',
+					templateUrl: '/layout/main/main.html',
 					controller: 'MainCtrl',
 					resolve: {
 										cupbopData: function($route, MainService) {
@@ -18,7 +18,7 @@
 				})
 
 				.when('/feed/:user', {
-					templateUrl: '/pages/feed/feed.html'
+					templateUrl: '/layout/feed/feed.html'
 				})
 
 				.otherwise({
