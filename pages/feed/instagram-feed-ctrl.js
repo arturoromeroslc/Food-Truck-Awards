@@ -8,7 +8,7 @@
 				MainService.getInstagramFeed(userId)
 					.then(function dataReturned(res) {
 						$scope.feedData = res;
-						$log.log('this is the $scope.feedData', $scope.feedData);
+						// $log.log('this is the $scope.feedData', $scope.feedData);
 					})
 			}
 
