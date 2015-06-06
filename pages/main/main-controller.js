@@ -2,21 +2,23 @@
 	'use strict';
 	angular
     .module('foodTruckApp')
-    .controller('MainCtrl', function MainCtrl($scope, $log, MainService) { 
+    .controller('MainCtrl', function MainCtrl($scope, $log, MainService, cupbopData) { 
 		
 		MainService.getInstagramFeed();
 		
-		$scope.getInstagramUser = function() {
-			MainService.getInstagramUser()
+		$scope.getInstagramUser = function(userId) {
+			MainService.getInstagramUser(userId)
 				.then(function(userData) {
 					$scope.userData = userData;
+					$scope.username = $scope.userData.username;
 					console.log('this is the $scope.userData', $scope.userData);
 				})
 		}
 
-		$scope.getInstagramUser();
+		//$scope.getInstagramUser('1160261459'); //'1160261459' is Cupbop
 
-		$scope.username = 1;
+		$scope.cupbopData = cupbopData;
+	
 
 
 	});   

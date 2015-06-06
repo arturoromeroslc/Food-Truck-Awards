@@ -1,7 +1,8 @@
-	<section ng-controller="MainCtrl" class="text-center padding-all-1_25 off-white">
+	<!--ng-controller="MainCtrl"-->
+	<section class="text-center padding-all-1_25 off-white">
 		<div>
-			<a ng-href="#/feed/{{username}}"><img ng-src="{{userData.profile_picture}}" alt="{{userData.full_name}}" /></a>
-			<h2>{{userData.full_name}}</h2>
-			<p>{{userData.bio}}</p>
+			<a ng-href="#/feed/{{cupbopData.username}}"><img ng-src="{{cupbopData.profile_picture}}" alt="{{cupbopData.full_name}}" /></a>
+			<h2>{{cupbopData.full_name}}</h2>
+			<p>{{cupbopData.bio}}</p>
 		</div>
 	</section>
