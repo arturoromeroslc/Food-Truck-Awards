@@ -10,6 +10,9 @@
 					resolve: {
 										cupbopData: function($route, MainService) {
 											return MainService.getInstagramUser('1160261459');
+										},
+										waffluvData: function($route, MainService) {
+											return MainService.getInstagramUser('200882079');
 										}
 					}
 				})

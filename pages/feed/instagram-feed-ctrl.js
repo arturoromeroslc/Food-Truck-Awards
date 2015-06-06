@@ -11,12 +11,12 @@
 						$log.log('this is the $scope.feedData', $scope.feedData);
 					})
 			}
-			//$scope.getInstagramFeed('1160261459'); //cupbob
-			//$scope.getInstagramFeed('200882079'); //waffluv
 
 			if ($routeParams.user === 'cupbop') { 
 			$scope.getInstagramFeed('1160261459');
-			};
+			} else if ($routeParams.user === 'waffluv') {
+				$scope.getInstagramFeed('200882079');
+				};
 
 	
 

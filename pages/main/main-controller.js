@@ -2,7 +2,7 @@
 	'use strict';
 	angular
     .module('foodTruckApp')
-    .controller('MainCtrl', function MainCtrl($scope, $log, MainService, cupbopData) { 
+    .controller('MainCtrl', function MainCtrl($scope, $log, MainService, cupbopData, waffluvData) { 
 		
 		MainService.getInstagramFeed();
 		
@@ -15,9 +15,9 @@
 				})
 		}
 
-		//$scope.getInstagramUser('1160261459'); //'1160261459' is Cupbop
-
 		$scope.cupbopData = cupbopData;
+		$scope.waffluvData = waffluvData;
+
 	
 
 
