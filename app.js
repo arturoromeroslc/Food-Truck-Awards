@@ -5,7 +5,7 @@
 			'firebase'
 		])
 		.constant('fb', {
-			url: 'https://foodtruckawards.firebaseio.com/'
+			url: 'https://foodtruckawards.firebaseio.com'
 		})
 		.config(function($routeProvider) {
 			$routeProvider
