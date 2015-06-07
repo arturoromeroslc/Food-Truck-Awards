@@ -1,8 +1,12 @@
 (function() {
 	angular
 		.module('foodTruckApp', [
-			'ngRoute'
+			'ngRoute',
+			'firebase'
 		])
+		.constant('fb', {
+			url: 'https://foodtruckawards.firebaseio.com/'
+		})
 		.config(function($routeProvider) {
 			$routeProvider
 				

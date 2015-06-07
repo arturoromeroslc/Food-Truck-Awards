@@ -1,19 +1,12 @@
-<!--ng-controller="MainCtrl"-->
-<section class="text-center padding-all-1_25 off-white">
+<section class="text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers">
+	{{user.username}}	
 	<div>
-		<a ng-href="#/feed/{{cupbopData.username}}"><img ng-src="{{cupbopData.profile_picture}}" alt="{{cupbopData.full_name}}" /></a>
-		<h2>{{cupbopData.full_name}}</h2>
-		<p>{{cupbopData.bio}}</p>
-		<div ng-controller="VoteCtrl">
-			<a ng-click="logClick()"><h1 class="small-round-button">+1</h1></a>
-		</div>
-	</div>
-	<div>
-		<a ng-href="#/feed/{{waffluvData.username}}"><img ng-src="{{waffluvData.profile_picture}}" alt="{{waffluvData.full_name}}" /></a>
-		<h2>{{waffluvData.full_name}}</h2>
-		<p>{{waffluvData.bio}}</p>
-		<div ng-controller="VoteCtrl">
-			<a ng-click="logClick()"><h1 class="small-round-button">+1</h1></a>
-		</div>
+		<a ng-href="#/feed/{{user.username}}"><img ng-src="{{user.profile_picture}}" alt="{{user.full_name}}" /></a>
+		<h2>{{user.full_name}}</h2>
+		<h3>Total Votes: {{data.foo}}</h3>
+		<p>{{user.bio}}</p>
+		<a ng-click="addVotes()"><h1 class="small-round-button">+1</h1></a>
+		<h4>{{user.voteCount}}</h4>
 	</div>
 </section>
+<!-- <button ng-click="addVotes()">add votes</button> -->
