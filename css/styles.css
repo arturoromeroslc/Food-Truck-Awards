@@ -1,0 +1,61 @@
+/*****************
+Defaults
+*****************/
+a {
+	text-decoration: none;
+	color: rgb(64, 148, 244);
+	cursor: pointer;
+}
+
+/*****************
+Navigation
+*****************/
+nav {
+	height: 56px;
+  line-height: 56px;
+}
+
+.text-center {
+	text-align: center;
+}
+.border-dash {
+	border: 2px dashed #4183c4;
+	padding: 2px;
+}
+.blue-green {
+	background-color: #063053;
+}
+.blue-grey {
+	background-color: #fff;
+}
+.blue-font {
+	color: #4183c4;
+}
+
+/*****************
+Section -- Images
+*****************/
+.off-white {
+	color: #f7f7f7;
+}
+
+/*****************
+Buttons
+*****************/
+.small-round-button {
+  border-radius: .5rem;
+  padding-top: 0.875rem;
+  padding-right: 1.75rem;
+  padding-bottom: 0.9375rem;
+  padding-left: 1.75rem;
+  border: 1px solid #fff;
+}
+
+/*****************
+Guts
+*****************/
+.padding-all-1_25 {
+	padding: 1.25rem;
+}
+
+
