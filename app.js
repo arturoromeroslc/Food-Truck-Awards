@@ -23,7 +23,7 @@
 					}
 				})
 
-				.when('/feed/:user', {
+				.when('/feed/:instagramUser', {
 					templateUrl: '/layout/feed/feed.html'
 				})
 

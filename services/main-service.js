@@ -19,10 +19,10 @@
 
 		this.getInstagramUser = function(userId) { 
 			return $http.jsonp('https://api.instagram.com/v1/users/' + userId + '?client_id=f1537afabc07455c820f6a2566076008&callback=JSON_CALLBACK')
-				.then(function instagramUserData(res) {
-					var data = res.data.data;
-					instagramUsersArray.push(data);
-					return data;
+				.then(function instagramUserDataCallback(res) {
+					var instagramUserData = res.data.data;
+					instagramUsersArray.push(instagramUserData);
+					return instagramUserData;
 				})
 		}
 

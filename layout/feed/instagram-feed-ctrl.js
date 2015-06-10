@@ -8,18 +8,15 @@
 
 			$scope.getInstagramFeed = function(userId) {
 				MainService.getInstagramFeed(userId)
-					.then(function dataReturned(res) {
-						$scope.feedData = res;
+					.then(function dataReturned(response) {
+						$scope.feedData = response;
 					})
 			}
 
-			if ($routeParams.user === 'cupbop') { 
+			if ($routeParams.instagramUser === 'cupbop') { 
 			$scope.getInstagramFeed('1160261459');
-			} else if ($routeParams.user === 'waffluv') {
+			} else if ($routeParams.instagramUser === 'waffluv') {
 				$scope.getInstagramFeed('200882079');
 				};
-
-	
-
 	});   
 }()); 
