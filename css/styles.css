@@ -19,8 +19,9 @@ nav {
 	text-align: center;
 }
 .border-dash {
-	border: 2px dashed #4183c4;
-	padding: 2px;
+	border: 1.4px solid #4183c4;
+	padding: 7px;
+	border-radius: 2rem;
 }
 .blue-green {
 	background-color: #063053;
@@ -31,24 +32,33 @@ nav {
 .blue-font {
 	color: #4183c4;
 }
-
+.bold {
+	font-weight: bold;
+	font-size: 19px;
+}
 /*****************
 Section -- Images
 *****************/
 .off-white {
 	color: #f7f7f7;
 }
+section.instagram-main {
+	height: 400px;
+	margin-top: 3rem;
+}
 
 /*****************
 Buttons
 *****************/
 .small-round-button {
-  border-radius: .5rem;
+  border-radius: 2.5rem;
   padding-top: 0.875rem;
   padding-right: 1.75rem;
   padding-bottom: 0.9375rem;
   padding-left: 1.75rem;
   border: 1px solid #fff;
+  display: inline-block;
+  margin-top: 2.2rem;
 }
 
 /*****************

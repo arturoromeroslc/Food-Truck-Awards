@@ -1,12 +1,10 @@
-<section class="text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers">
-	{{user.username}}	
+<section class="instagram-main text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers">
 	<div>
 		<a ng-href="#/feed/{{user.username}}"><img ng-src="{{user.profile_picture}}" alt="{{user.full_name}}" /></a>
 		<h2>{{user.full_name}}</h2>
 		<h3>Total Votes: {{data.voteCount}}</h3>
 		<p>{{user.bio}}</p>
-		<a ng-click="addVotes(user.id)"><h1 class="small-round-button">+1</h1></a>
+		<a ng-click="addVotes(user.id)" class="small-round-button">+1</a>
 		<h4>{{user.voteCount}}</h4>
 	</div>
 </section>
-<!-- <button ng-click="addVotes()">add votes</button> -->
