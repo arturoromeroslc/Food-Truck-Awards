@@ -1,5 +1,5 @@
 <section class="instagram-main text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers">
-	<div ng-controller="VoteCtrl">
+	<div>
 		<a ng-href="#/feed/{{user.username}}"><img ng-src="{{user.profile_picture}}" alt="{{user.full_name}}" /></a>
 		<h2>{{user.full_name}}</h2>
 		<h3 >Total Votes: {{data.users[user.id].voteCount}}</h3>

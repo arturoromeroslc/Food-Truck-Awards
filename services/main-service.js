@@ -5,7 +5,6 @@
     .service('MainService', 
 
 	function MainService($log, $http, $firebase, $firebaseArray, $firebaseObject, fb) { 
-		
 
 		var instagramUsersArray = [];
 
