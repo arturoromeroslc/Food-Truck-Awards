@@ -15,7 +15,6 @@
 					var instagramUserData = res.data.data;
 					$log.log(userId)
 					instagramUsersArray.push(instagramUserData);
-					// return instagramUserData;
 				})
 		}
 
