@@ -7,7 +7,7 @@
 		.constant('fb', {
 			url: 'https://foodtruckawards.firebaseio.com'
 		})
-		.config(function($routeProvider) {
+		.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
 			$routeProvider
 				
 				.when('/main', {
@@ -30,5 +30,11 @@
 				.otherwise({
 					redirectTo: '/main'
 				})
+
+		  uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyBhzHAgDTYOe5iGRFs2B0_bN30mWSGJly8',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    	});		
 		})
 })();

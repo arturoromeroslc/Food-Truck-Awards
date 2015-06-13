@@ -13,9 +13,35 @@
 			<a href="#/main" class="border-dash blue-font">Priced <span class="bold">&#8964;</span></a>
 			<span>Food Truck In SLC</span>
 	</nav>
+
+
+ <style type="text/css">
+      html, body, #map-canvas { height: 80%; margin: 0; padding: 0;}
+    </style>
+
+<div id="map-canvas"></div>
+ 
+
+
+
+
 	<ng-view></ng-view>
 
-
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhzHAgDTYOe5iGRFs2B0_bN30mWSGJly8">
+</script>
+<script type="text/javascript">
+  function initialize() {
+    var mapOptions = {
+      center: { lat: -34.397, lng: 150.644},
+      zoom: 8
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+ 
 
 
 <!--Scripts-Libs-->
@@ -24,6 +50,8 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+<script src='/bower_components/lodash/lodash.min.js'></script>
+<script src='/bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script> -->
 
 <!--App Scripts-->
