@@ -4,7 +4,7 @@
     .module('foodTruckApp')
     .controller('MainCtrl', 
 
-  function MainCtrl($scope, $log, $firebaseObject, MainService, cupbopData, waffluvData, fb) { 
+  function MainCtrl($scope, $log, $firebaseObject, MainService, waffluvData, fb) { 
 
 		$scope.instagramUsers = MainService.getInstagramUsersArray();	
 		
