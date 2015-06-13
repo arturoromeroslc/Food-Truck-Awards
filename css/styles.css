@@ -67,5 +67,10 @@ Guts
 .padding-all-1_25 {
 	padding: 1.25rem;
 }
-
+/******************
+Map
+*****************/
+.angular-google-map-container { 
+	height: 400px; 
+}
 
