@@ -4,8 +4,9 @@
 		.module('foodTruckApp')
 		.controller('MapCtrl',
 
-	function MapCtrl($scope, $log, $routeParams, uiGmapGoogleMapApi) {
-    $scope.vendorLocation = {
+	function MapCtrl($scope, $log, $routeParams, uiGmapGoogleMapApi) {	
+		// uiGmapGoogleMapApi.then(function(maps) {
+		$scope.vendorLocation = {
     	latitude: '40.761852337766335',
     	longitude: '-111.89027442131191'
     };
@@ -20,12 +21,15 @@
     		zoomControl: false,
     		scaleControl: true
     }
-    $log.log($scope.map)
+    // $log.log($scope.map)
+
     $scope.marker = {
             coords: {
                 latitude: $scope.vendorLocation.latitude,
                 longitude: $scope.vendorLocation.longitude
-            },
+            }, 
+
+            options: { draggable: true },
             
             show: false,
             
@@ -33,7 +37,9 @@
             
             events: {
 		        	click: function (marker, eventName, args) {
-			          $log.log('marker clicked');
+		        		// marker.draggable = false;
+		        		// marker.setDraggable = false;
+			          $log.log(marker.getPosition().lat());
     					}
     				}	
     };
@@ -48,12 +54,6 @@
     };
     $scope.title = 'Cubpob';    
         
-
-
-		
-		uiGmapGoogleMapApi.then(function(maps) {
-			$log.log('after promigse', uiGmapGoogleMapApi)
     });
-
-	})
+	// });
 }())

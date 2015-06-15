@@ -3,7 +3,8 @@
 		center='map.center' 
 		zoom='map.zoom'
 		pan='map.panControl'
-		zoom-control="false">
+		zoom-control="false"
+		draggable="true">
 		
 			<ui-gmap-marker 
 				idkey="marker.id" 
@@ -24,8 +25,9 @@
   	
 	</ui-gmap-google-map>
 
-	<form ng-controller="MapCtrl">
+	<form ng-controller="MapCtrl" >
 		<input type="text" ng-model="vendorLocation.latitude" />
+		<button ng-click="setLat(vendorLocation.latitude)">Sumbit</button>
 	</form>
 	
 	
