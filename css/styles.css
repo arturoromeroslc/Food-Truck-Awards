@@ -46,6 +46,22 @@ section.instagram-main {
 	height: 400px;
 	margin-top: 3rem;
 }
+section {
+	padding-left: 0;
+	padding-right: 0;
+}
+/*****************
+IMG FEED
+****************/
+img.instagram {
+	border: 0;
+  height: 5rem;
+  width: 5rem;
+  padding-right: 7px;
+  border-radius: 3rem;
+}
+
+
 
 /*****************
 Buttons
@@ -67,10 +83,16 @@ Guts
 .padding-all-1_25 {
 	padding: 1.25rem;
 }
+.margin_top_2 {
+	margin-top: 2rem;
+}
 /******************
 Map
 *****************/
 .angular-google-map-container { 
-	height: 400px; 
+	height: 200px;
+	width: 100%; 
 }
-
+.black {
+	color: black;
+}
