@@ -6,8 +6,16 @@
 
 	function MapCtrl($scope, $log, $routeParams, uiGmapGoogleMapApi) {	
 		// uiGmapGoogleMapApi.then(function(maps) {
-		$scope.vendorLocation = {
-    	latitude: '40.761852337766335',
+	$scope.setLat = function(lat) {
+        $scope.vendorLocation.latitude = lat;
+        console.log($scope.vendorLocation.latitude)
+        var map_canvas = document.getElementById('map');
+        var map = new google.maps.Map(map_canvas, map_options);
+        return $scope.vendorLocation.latitude;
+    }
+
+    $scope.vendorLocation = {
+    	latitude: '',
     	longitude: '-111.89027442131191'
     };
 
@@ -21,7 +29,6 @@
     		zoomControl: false,
     		scaleControl: true
     }
-    // $log.log($scope.map)
 
     $scope.marker = {
             coords: {
@@ -43,6 +50,18 @@
     					}
     				}	
     };
+
+    // $scope.$watch('latitude + longitude', function (newValue, oldValue) {
+    //     if (newValue !== oldValue) { 
+    //       var center = map.getCenter(),
+    //         latitude = center.lat(),
+    //         longitude = center.lng();
+    //       if ($scope.latitude !== latitude || $scope.longitude !== longitude)
+    //         map.setCenter(new google.maps.LatLng($scope.latitude, $scope.longitude));
+    //     }
+    //   });
+    // }
+
     $scope.windowOptions = {
             visible: false
     };
