@@ -1,85 +1,54 @@
 (function () {
-	// 'use strict';
+	'use strict';
 	angular
 		.module('foodTruckApp')
 		.controller('MapCtrl',
 
-	function MapCtrl($scope, $log, $routeParams, uiGmapGoogleMapApi) {	
-		// uiGmapGoogleMapApi.then(function(maps) {
+	function MapCtrl($scope, $log, $timeout) {
+        $scope.vendorLocation = {};
 
-    $scope.test = false;
-    $scope.test2 = false;
-
-    $scope.vendorLocation = {
-    	latitude: '',
-    	longitude: '-111.89027442131191'
-    };
-
-    $scope.setLat = function(lat) {
-        debugger
-        init();
-        $scope.test = true;
-        $scope.test2 = true;
-        console.log($scope.vendorLocation.latitude)
-        return $scope.vendorLocation.latitude;
-    }
-    function init() {
         $scope.map = {
             center: {
-              latitude: $scope.vendorLocation.latitude,
-            	longitude: $scope.vendorLocation.longitude
-            },
-            zoom: 16,
-            panControl: false,
-        		zoomControl: false,
-        		scaleControl: true
-        }
-
-        $scope.marker = {
-                coords: {
-                    latitude: $scope.vendorLocation.latitude,
-                    longitude: $scope.vendorLocation.longitude
-                }, 
-
-                options: { draggable: true },
-                
-                show: false,
-                
-                id: 0,
-                
-                events: {
-    		        	click: function (marker, eventName, args) {
-    		        		// marker.draggable = false;
-    		        		// marker.setDraggable = false;
-    			          $log.log(marker.getPosition());
-        					}
-        				}	
+                latitude: 40.1451, 
+                longitude: -99.6680 
+            }, 
+            zoom: 8 
         };
-    }
-    init();
-
-    // $scope.$watch('latitude + longitude', function (newValue, oldValue) {
-    //     if (newValue !== oldValue) { 
-    //       var center = map.getCenter(),
-    //         latitude = center.lat(),
-    //         longitude = center.lng();
-    //       if ($scope.latitude !== latitude || $scope.longitude !== longitude)
-    //         map.setCenter(new google.maps.LatLng($scope.latitude, $scope.longitude));
-    //     }
-    //   });
-    // }
-
-    $scope.windowOptions = {
-            visible: false
-    };
-    $scope.onClick = function() {
-            $scope.windowOptions.visible = !$scope.windowOptions.visible;
-    };    
-  	$scope.closeClick = function() {
-            $scope.windowOptions.visible = false;
-    };
-    $scope.title = 'Cubpob';    
         
-    });
-	// });
+        $scope.marker = {
+          id: 0,
+          coords: {
+            latitude: 40.1451,
+            longitude: -99.6680
+          },
+          options: { draggable: false },
+          events: {
+            click: function (marker, eventName, args) {
+              $log.log('marker clicked');
+              var lat = marker.getPosition().lat();
+              var lon = marker.getPosition().lng();
+              $log.log(lat);
+              $log.log(lon);
+            }
+          }
+        };
+     
+     $scope.setMarker = function(location) {
+         $scope.marker.coords.latitude = location.lat;
+         $scope.marker.coords.longitude = location.lon;
+         $scope.map.center.latitude = location.lat;
+         $scope.map.center.longitude = location.lon;
+        }; 
+     
+    $scope.getLocation = function() {
+        console.log('loading location...')
+        navigator.geolocation.getCurrentPosition(function gettinLocation(position){
+         var location = {}
+         location.lat = position.coords.latitude;
+         location.lon = position.coords.longitude;
+         $scope.setMarker(location);
+        })
+    }
+     
+      });
 }())
