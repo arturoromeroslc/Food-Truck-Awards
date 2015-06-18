@@ -38,6 +38,7 @@
          $scope.marker.coords.longitude = location.lon;
          $scope.map.center.latitude = location.lat;
          $scope.map.center.longitude = location.lon;
+         $scope.map.zoom = 18;
         }; 
      
     $scope.getLocation = function() {
