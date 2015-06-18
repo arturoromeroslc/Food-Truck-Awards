@@ -6,50 +6,57 @@
 
 	function MapCtrl($scope, $log, $routeParams, uiGmapGoogleMapApi) {	
 		// uiGmapGoogleMapApi.then(function(maps) {
-	$scope.setLat = function(lat) {
-        $scope.vendorLocation.latitude = lat;
-        console.log($scope.vendorLocation.latitude)
-        var map_canvas = document.getElementById('map');
-        var map = new google.maps.Map(map_canvas, map_options);
-        return $scope.vendorLocation.latitude;
-    }
+
+    $scope.test = false;
+    $scope.test2 = false;
 
     $scope.vendorLocation = {
     	latitude: '',
     	longitude: '-111.89027442131191'
     };
 
-    $scope.map = {
-        center: {
-          latitude: $scope.vendorLocation.latitude,
-        	longitude: $scope.vendorLocation.longitude
-        },
-        zoom: 16,
-        panControl: false,
-    		zoomControl: false,
-    		scaleControl: true
+    $scope.setLat = function(lat) {
+        debugger
+        init();
+        $scope.test = true;
+        $scope.test2 = true;
+        console.log($scope.vendorLocation.latitude)
+        return $scope.vendorLocation.latitude;
     }
+    function init() {
+        $scope.map = {
+            center: {
+              latitude: $scope.vendorLocation.latitude,
+            	longitude: $scope.vendorLocation.longitude
+            },
+            zoom: 16,
+            panControl: false,
+        		zoomControl: false,
+        		scaleControl: true
+        }
 
-    $scope.marker = {
-            coords: {
-                latitude: $scope.vendorLocation.latitude,
-                longitude: $scope.vendorLocation.longitude
-            }, 
+        $scope.marker = {
+                coords: {
+                    latitude: $scope.vendorLocation.latitude,
+                    longitude: $scope.vendorLocation.longitude
+                }, 
 
-            options: { draggable: true },
-            
-            show: false,
-            
-            id: 0,
-            
-            events: {
-		        	click: function (marker, eventName, args) {
-		        		// marker.draggable = false;
-		        		// marker.setDraggable = false;
-			          $log.log(marker.getPosition().lat());
-    					}
-    				}	
-    };
+                options: { draggable: true },
+                
+                show: false,
+                
+                id: 0,
+                
+                events: {
+    		        	click: function (marker, eventName, args) {
+    		        		// marker.draggable = false;
+    		        		// marker.setDraggable = false;
+    			          $log.log(marker.getPosition());
+        					}
+        				}	
+        };
+    }
+    init();
 
     // $scope.$watch('latitude + longitude', function (newValue, oldValue) {
     //     if (newValue !== oldValue) { 

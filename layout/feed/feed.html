@@ -4,14 +4,16 @@
 		zoom='map.zoom'
 		pan='map.panControl'
 		zoom-control="false"
-		draggable="true">
+		draggable="true"
+		refresh="test">
 		
 			<ui-gmap-marker 
 				idkey="marker.id" 
 				coords="marker.coords" 
 				options="marker.options" 
 				click="onClick()" 
-				events="marker.events" >
+				events="marker.events"
+				do-rebuild-all="test2">
 
 			  <ui-gmap-window 
 			  	options="windowOptions" 
