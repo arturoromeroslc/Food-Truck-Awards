@@ -1,6 +1,25 @@
-<section ng-controller="InstagramFeedCtrl" class="text-center padding-all-1_25 off-white">
-	<h4>See all of our photos</h4>
-	<div>
-		<img ng-repeat="feed in feedData" ng-src="{{feed.images.thumbnail.url}}"/>
+<!--Uses map-controller.js-->
+<section ng-controller="InstagramFeedCtrl" class="text-center off-white">
+ <ui-gmap-google-map 
+ 	center="map.center" 
+ 	zoom="map.zoom" 
+ 	draggable="true" 
+ 	options="options">
+        <ui-gmap-marker 
+        	coords="marker.coords" 
+        	options="marker.options" 
+        	events="marker.events" 
+        	idkey="marker.id">
+        </ui-gmap-marker>
+</ui-gmap-google-map>
+	<form>
+		<input type="text" ng-model="location.lat" />
+		<input type="text" ng-model="location.lon" />
+		<button ng-click="setMarker(location)">Sumbit</button>
+	</form>
+	<button ng-click="getLocation()">Get Location</button>
+	<button ng-click="getLocationFromFireBase()">Push to Firebase</button>
+	<div class="margin_top_2">
+		<img class="instagram" ng-repeat="feed in feedData" ng-src="{{feed.images.thumbnail.url}}"/>
 	</div>
 </section>

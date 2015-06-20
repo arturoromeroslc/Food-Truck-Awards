@@ -2,14 +2,14 @@
 	angular
 		.module('foodTruckApp', [
 			'ngRoute',
-			'firebase'
+			'firebase',
+			'uiGmapgoogle-maps'
 		])
 		.constant('fb', {
 			url: 'https://foodtruckawards.firebaseio.com'
 		})
-		.config(function($routeProvider) {
+		.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
 			$routeProvider
-				
 				.when('/main', {
 					templateUrl: '/layout/main/main.html',
 					controller: 'MainCtrl',
@@ -22,7 +22,6 @@
 										}
 					}
 				})
-
 				.when('/feed/:instagramUser', {
 					templateUrl: '/layout/feed/feed.html'
 				})
@@ -30,5 +29,11 @@
 				.otherwise({
 					redirectTo: '/main'
 				})
+
+		  uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyBhzHAgDTYOe5iGRFs2B0_bN30mWSGJly8',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    	});		
 		})
 })();
