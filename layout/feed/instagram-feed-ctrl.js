@@ -13,15 +13,12 @@
 						max, 
 						a = [], 
 						b;
-						for (i = 0, max = res.length; i < max; i += 2) { 
+						for (i = 0, max = res.length; i < max; i++) { 
       				b = { image1: res[i].images.thumbnail.url };
-      				 if (res[i + 1]) {
-				       	b.image2 = res[i + 1].images.thumbnail.url;
-				       }
 				      	a.push(b);
 				      }				    
 				      $scope.groupedSlides = a;
-						console.log('array.lenght should be = 33', a)
+						console.log('array.lenght should be = 33')
 					})
 			}
 
