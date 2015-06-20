@@ -19,6 +19,19 @@
 	</form>
 	<button ng-click="getLocation()">Get Location</button>
 	<button ng-click="getLocationFromFireBase()">Push to Firebase</button>
+	<div>
+		<ul>
+			<li>
+				Location
+			</li>
+			<li>
+				Distance
+			</li>
+			<li>
+				Phone
+			</li>
+		</ul>
+	</div>
 	<div class="margin_top_2">
 		<img class="instagram" ng-repeat="feed in feedData" ng-src="{{feed.images.thumbnail.url}}"/>
 	</div>
