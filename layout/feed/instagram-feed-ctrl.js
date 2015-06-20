@@ -31,7 +31,7 @@
 				$scope.getInstagramFeed('200882079');
 				};
 
-			 $scope.myInterval = 4000;
+			 $scope.myInterval = 3000;
 		   var slides = $scope.slides = [];
 		   
 		   $scope.addSlide = function() {

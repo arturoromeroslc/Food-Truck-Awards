@@ -99,12 +99,20 @@ ul.list-inline {
 	display: flex;
 	flex-direction: row; 
 	justify-content: space-between;
-	margin-left: auto;
+	margin-left: 17%;
 	margin-right: auto;
 	max-width: 80%;
 }
 ul {
 	padding: 0;
+}
+li {
+  border-right: 1px solid white;
+  padding-right: 1.9375rem;
+  margin-left: -2rem;
+}
+.no-border {
+	border: none;
 }
 
 /******************
