@@ -38,6 +38,7 @@
           }
         };
       });
+    
      $scope.setMarker = function(location) {
          $scope.marker.coords.latitude = location.lat;
          $scope.marker.coords.longitude = location.lon;
