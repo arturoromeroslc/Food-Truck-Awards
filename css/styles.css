@@ -9,6 +9,7 @@ a {
 ul {
 	list-style-type: none;
 }
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 /*****************
 Navigation
@@ -98,12 +99,20 @@ ul.list-inline {
 	display: flex;
 	flex-direction: row; 
 	justify-content: space-between;
-	margin-left: auto;
+	margin-left: 17%;
 	margin-right: auto;
 	max-width: 80%;
 }
 ul {
 	padding: 0;
+}
+li {
+  border-right: 1px solid white;
+  padding-right: 1.9375rem;
+  margin-left: -2rem;
+}
+.no-border {
+	border: none;
 }
 
 /******************
@@ -115,4 +124,18 @@ Map
 }
 .black {
 	color: black;
+}
+/****************
+Carosel
+*******************/
+.carousel-indicators {
+	display: none;
+}
+img.instagram.ng-scope {
+  height: 100px;
+  width: 100px;
+  border-radius: 10rem;
+}
+.carousel-control  {
+	display: none;
 }

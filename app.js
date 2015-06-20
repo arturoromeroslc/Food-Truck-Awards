@@ -3,7 +3,10 @@
 		.module('foodTruckApp', [
 			'ngRoute',
 			'firebase',
-			'uiGmapgoogle-maps'
+			'uiGmapgoogle-maps',
+			'ui.bootstrap',
+			'ngTouch',
+			'ngAnimate'
 		])
 		.constant('fb', {
 			url: 'https://foodtruckawards.firebaseio.com'
@@ -36,4 +39,8 @@
         libraries: 'weather,geometry,visualization'
     	});		
 		})
+
+		// .controller('CarouselDemoCtrl', function ($scope) {
+		 
+		// });
 })();

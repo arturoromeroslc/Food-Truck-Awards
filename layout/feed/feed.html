@@ -12,30 +12,38 @@
         	idkey="marker.id">
         </ui-gmap-marker>
 </ui-gmap-google-map>
-	<form>
+	<!--FOR ADMIN 
+		<form>
 		<input type="text" ng-model="location.lat" />
 		<input type="text" ng-model="location.lon" />
 		<button ng-click="setMarker(location)">Sumbit</button>
 	</form>
 	<button ng-click="getLocation()">Get Location</button>
-	<button ng-click="getLocationFromFireBase()">Push to Firebase</button>
+	<button ng-click="getLocationFromFireBase()">Push to Firebase</button> -->
 		<ul class="list-inline">
 			<ul>
 				<li><i class="fa fa-map-marker"></i></li>
-				<li>Location</li>
+				<li>Galliven Center</li>
 			</ul>
 			
 			<ul>
 				<li><i class="fa fa-arrows-h"></i></li>
-				<li>Distance</li>
+				<li>Get Directions</li>
 			</ul>	
 			
 			<ul>
-				<li><i class="fa fa-phone"></i></li>
-				<li>Phone</li>
+				<li class="no-border"><i class="fa fa-phone"></i></li>
+				<li  class="no-border">555-555-5555</li>
 			</ul>
 		</ul>
-	<div class="margin_top_2">
-		<img class="instagram" ng-repeat="feed in feedData" ng-src="{{feed.images.thumbnail.url}}"/>
-	</div>
+
+	<carousel interval="myInterval">
+    <slide ng-repeat="slideCollection in groupedSlides" active="slide.active">
+      <div>
+        <img ng-src="{{slideCollection.image1}}" style="margin:auto;">      
+        <img ng-src="{{slideCollection.image2}}" style="margin:auto;">      
+      </div>
+    </slide>
+  </carousel>  
+
 </section>
