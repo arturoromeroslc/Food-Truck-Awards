@@ -9,6 +9,7 @@ a {
 ul {
 	list-style-type: none;
 }
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 /*****************
 Navigation
@@ -115,4 +116,10 @@ Map
 }
 .black {
 	color: black;
+}
+/****************
+Carosel
+*******************/
+.carousel-indicators {
+	display: none;
 }

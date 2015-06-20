@@ -35,7 +35,25 @@
 				<li>Phone</li>
 			</ul>
 		</ul>
-	<div class="margin_top_2">
-		<img class="instagram" ng-repeat="feed in feedData" ng-src="{{feed.images.thumbnail.url}}"/>
+<!-- 
+	<div ng-controller="CarouselDemoCtrl">
+	  <div style="height: 500px">
+	    <carousel>
+	      <slide ng-repeat="feed in feedData">
+	        <img ng-src="{{feed.images.thumbnail.url}}" style="margin:auto;">
+	        </div>
+	      </slide>
+	    </carousel>
+  </div> -->
+
+
+
+
+	<div class="margin_top_2" ng-controller="CarouselDemoCtrl" style="height: 500px">
+		<carousel>
+			<slide ng-repeat="feed in feedData">
+				<img class="instagram" ng-src="{{feed.images.thumbnail.url}}" style="margin:auto;"/>
+			</slide>
+		</carousel>	
 	</div>
 </section>
