@@ -123,3 +123,11 @@ Carosel
 .carousel-indicators {
 	display: none;
 }
+img.instagram.ng-scope {
+  height: 100px;
+  width: 100px;
+  border-radius: 10rem;
+}
+.carousel-control  {
+	display: none;
+}
