@@ -8,14 +8,8 @@
 
 			$scope.getInstagramFeed = function(userId) {
 				MainService.getInstagramFeed(userId)
-					.then(function dataReturned(res) {
-						var i, max, a = [], b;
-						for (i = 0, max = res.length; i < max; i++) { 
-      				b = { image: res[i].images.thumbnail.url };
-				      	a.push(b);
-				      }				    
-				      $scope.groupedSlides = a;
-						console.log('array.lenght should be = 33')
+					.then(function dataReturned(res) {			    
+				      $scope.groupedSlides = res;
 					})
 			}
 
