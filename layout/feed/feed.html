@@ -1,4 +1,6 @@
 <!--Uses map-controller.js-->
+
+
 <section ng-controller="InstagramFeedCtrl" class="text-center off-white">
  <ui-gmap-google-map 
  	center="map.center" 
@@ -37,13 +39,14 @@
 			</ul>
 		</ul>
 
-	<carousel interval="myInterval">
-    <slide ng-repeat="slideCollection in groupedSlides" active="slide.active">
-      <div>
-        <img ng-src="{{slideCollection.image1}}" style="margin:auto;">      
-        <img ng-src="{{slideCollection.image2}}" style="margin:auto;">      
+<div>
+    <data-owl-carousel class="owl-carousel" data-options="{navigation: false, pagination: true, rewindNav : false}">
+      <div owl-carousel-item="" ng-repeat="item in groupedSlides" class="item">
+        <img ng-src="{{item.image1}}" style="margin:auto;">      
+        <img ng-src="{{item.image2}}" style="margin:auto;">    
       </div>
-    </slide>
-  </carousel>  
+    </data-owl-carousel>
+ </div>   
+
 
 </section>
