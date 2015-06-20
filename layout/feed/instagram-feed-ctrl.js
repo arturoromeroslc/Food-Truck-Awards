@@ -9,12 +9,9 @@
 			$scope.getInstagramFeed = function(userId) {
 				MainService.getInstagramFeed(userId)
 					.then(function dataReturned(res) {
-						var i,
-						max, 
-						a = [], 
-						b;
+						var i, max, a = [], b;
 						for (i = 0, max = res.length; i < max; i++) { 
-      				b = { image1: res[i].images.thumbnail.url };
+      				b = { image: res[i].images.thumbnail.url };
 				      	a.push(b);
 				      }				    
 				      $scope.groupedSlides = a;

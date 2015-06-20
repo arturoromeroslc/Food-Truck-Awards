@@ -19,30 +19,27 @@
 	</form>
 	<button ng-click="getLocation()">Get Location</button>
 	<button ng-click="getLocationFromFireBase()">Push to Firebase</button> -->
-		<ul class="list-inline">
-			<ul>
-				<li><i class="fa fa-map-marker"></i></li>
-				<li>Galliven Center</li>
-			</ul>
-			
-			<ul>
-				<li><i class="fa fa-arrows-h"></i></li>
-				<li>Get Directions</li>
-			</ul>	
-			
-			<ul>
-				<li class="no-border"><i class="fa fa-phone"></i></li>
-				<li  class="no-border">555-555-5555</li>
-			</ul>
+	<ul class="list-inline">
+		<ul>
+			<li><i class="fa fa-map-marker"></i></li>
+			<li>Galliven Center</li>
 		</ul>
-
-<div>
-    <data-owl-carousel class="owl-carousel" data-options="{navigation: false, pagination: true, rewindNav : false}">
+		
+		<ul>
+			<li><i class="fa fa-arrows-h"></i></li>
+			<li>Get Directions</li>
+		</ul>	
+		
+		<ul>
+			<li class="no-border"><i class="fa fa-phone"></i></li>
+			<li  class="no-border">555-555-5555</li>
+		</ul>
+	</ul>
+	<div>
+    <data-owl-carousel class="owl-carousel">
       <div owl-carousel-item="" ng-repeat="item in groupedSlides" class="item">
-        <img ng-src="{{item.image1}}" style="margin:auto;">      
+        <img ng-src="{{item.image}}">      
       </div>
     </data-owl-carousel>
  </div>   
-
-
 </section>
