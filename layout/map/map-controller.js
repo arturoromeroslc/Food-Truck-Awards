@@ -4,13 +4,13 @@
 		.module('foodTruckApp')
 		.controller('MapCtrl',
 
-	function MapCtrl($scope, fb, $firebaseObject) {
+	function MapCtrl($scope, $log, $firebaseObject, fb) {
         var ref = new Firebase(fb.url);     
         $scope.data = $firebaseObject(ref);
         
     $scope.FbLocation = $scope.data.$loaded().then(function(){
         var FbLocation = $scope.data.location
-        console.log(FbLocation)
+        $log.log(FbLocation)
 
         $scope.map = {
             center: {
