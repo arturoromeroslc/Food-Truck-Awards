@@ -23,7 +23,21 @@
 							  margin: 10,
 							  loop: true,
 							  items: 1,
-							  stagePadding: 100
+							  stagePadding: 100,
+							  responsive: {
+						        0:{
+						            items:1,
+						            nav:false
+						        },
+						        200:{
+						            items:3,
+						            nav:false
+						        },
+						        1000:{
+						            items:5,
+						            nav:true,
+						        }
+						    }
 							});
 					};
 				}

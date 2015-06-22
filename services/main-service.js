@@ -30,7 +30,7 @@
 				.then(function dataReturned(res) {
 					var data = res.data.data;
 						var i, max, a = [], b;
-						for (i = 0, max = data.length; i < max; i++) { 
+						for (i = 0, max = 33; i < max; i++) { 
       				b = { image: data[i].images.thumbnail.url };
 				      	a.push(b);
 				      }				    
