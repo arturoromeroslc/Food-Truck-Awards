@@ -29,7 +29,12 @@
 			return $http.jsonp('https://api.instagram.com/v1/users/' + userId + '/media/recent?count=40&client_id=f1537afabc07455c820f6a2566076008&callback=JSON_CALLBACK')
 				.then(function dataReturned(res) {
 					var data = res.data.data;
-					return data;
+						var i, max, a = [], b;
+						for (i = 0, max = data.length; i < max; i++) { 
+      				b = { image: data[i].images.thumbnail.url };
+				      	a.push(b);
+				      }				    
+					return a;
 				});
 		}
 	})

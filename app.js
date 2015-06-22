@@ -4,7 +4,6 @@
 			'ngRoute',
 			'firebase',
 			'uiGmapgoogle-maps',
-			'ui.bootstrap',
 			'ngTouch',
 			'ngAnimate'
 		])
@@ -39,8 +38,4 @@
         libraries: 'weather,geometry,visualization'
     	});		
 		})
-
-		// .controller('CarouselDemoCtrl', function ($scope) {
-		 
-		// });
 })();
