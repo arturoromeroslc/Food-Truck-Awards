@@ -19,17 +19,16 @@
 	</form>
 	<button ng-click="getLocation()">Get Location</button>
 	<button ng-click="getLocationFromFireBase()">Push to Firebase</button> -->
+	
 	<ul class="list-inline">
 		<ul>
 			<li><i class="fa fa-map-marker"></i></li>
 			<li>Galliven Center</li>
 		</ul>
-		
-		<ul>
+		<a class="white" href="https://www.google.com/maps/dir/Current+Location/{{marker.coords.latitude}},{{marker.coords.longitude}}"><ul>
 			<li><i class="fa fa-arrows-h"></i></li>
 			<li>Get Directions</li>
-		</ul>	
-		
+		</ul>	</a>
 		<ul>
 			<li class="no-border"><i class="fa fa-phone"></i></li>
 			<li  class="no-border">555-555-5555</li>
@@ -38,7 +37,7 @@
 	<div>
     <data-owl-carousel class="owl-carousel">
       <div owl-carousel-item="" ng-repeat="item in groupedSlides" class="item">
-        <img ng-src="{{item.image}}">      
+        <img class="instagram" ng-src="{{item.image}}">      
       </div>
     </data-owl-carousel>
  </div>   

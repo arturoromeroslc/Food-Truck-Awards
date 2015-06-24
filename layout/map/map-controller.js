@@ -17,7 +17,7 @@
                 latitude: FbLocation.lat, 
                 longitude: FbLocation.lon 
             }, 
-            zoom: 8 
+            zoom: 18 
         };
         
         $scope.marker = {
