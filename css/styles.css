@@ -60,7 +60,12 @@ IMG FEED
 .instagram {
   border-radius: 9rem;
 }
-
+/*****************
+FONT COLOR
+****************/
+.white {
+	color: white;
+}
 
 /*****************
 Buttons
@@ -90,6 +95,11 @@ Guts
 /******************
 List Icons
 *****************/
+ul {
+	border-right: 1px solid white;
+	padding-left: 0px;
+	padding-right: 0.625rem;
+}
 ul.list-inline {
 	display: flex;
 	flex-direction: row; 
@@ -99,13 +109,9 @@ ul.list-inline {
 	max-width: 80%;
   margin-top: 6.875rem;
   border-top: 1px solid	white;
+  border-right: none;
 }
-ul {
-	padding: 0;
-}
-li {
-  border-right: 1px solid white;
-}
+
 .no-border {
 	border: none;
 }
