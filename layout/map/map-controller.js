@@ -1,11 +1,3 @@
-// <form>
-//   <input type="text" ng-model="location.lat" />
-//   <input type="text" ng-model="location.lon" />
-//   <button ng-click="setMarker(location)">Sumbit</button>
-// </form>
-// <button ng-click="getLocation()">Get Location</button>
-// <button ng-click="getLocationFromFireBase()">Push to Firebase</button> 
-
 (function () {
 	'use strict';
 	angular

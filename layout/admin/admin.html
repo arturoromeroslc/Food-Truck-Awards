@@ -1,39 +1,70 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<script type="text/javascript">
-	
-var functionCache = function(cb) {
-	var cache = {};
-	
-	return function(input) {
-		if (cache[input])
-			return cache[input];
-		else {
-			return cache[input] = cb(input)
-		}	
-	};
-};
+<div ng-controller="AppCtrl" layout="column">
+  <section layout="row" flex>
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Company</h1>
+      </md-toolbar>
+      <md-content layout-padding ng-controller="LeftCtrl">
+        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+          Close Sidenav Left
+        </md-button>
+        <p hide-md show-gt-md>
+          <li>Location</li>
+        </p>
+      </md-content>
+    </md-sidenav>
+    <md-content flex layout-padding>
+      <div layout="column" layout-fill layout-align="top center">
+        <div>
+          <md-button ng-click="toggleLeft()"
+            class="md-primary" hide-gt-md>
+            Toggle left
+          </md-button>
+        </div>
+        <!-- <div>
+          <md-button ng-click="toggleRight()"
+            class="md-primary">
+            Toggle right
+          </md-button>
+        </div> -->
+      </div>
+      <div flex></div>
+    </md-content>
+   <!--  <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+      <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">Sidenav Right</h1>
+      </md-toolbar>
+      <md-content ng-controller="RightCtrl" layout-padding>
+        <form>
+          <md-input-container>
+            <label for="testInput">Test input</label>
+            <input type="text" id="testInput"
+                   ng-model="data" md-sidenav-focus>
+          </md-input-container>
+        </form> -->
+        <!-- <md-button ng-click="close()" class="md-primary">
+          Close Sidenav Right
+        </md-button> -->
+      </md-content>
+    </md-sidenav>
+  </section>
+</div>
 
-functionCache(function() {
-	console.log('hello');
-})
 
 
-// var functionInside = functionCache(function() {console.log('inside')})
 
 
-var myFunction = functionCache(function(x) {
-	console.log('I ran');
-	return x * x;
-});
-
-console.log(myFunction(5))
 
 
-</script>
-</body>
-</html>
+
+
+<form class="pure-form">
+    <fieldset>
+        <legend>My Truck's Location</legend>
+        <input type="text" ng-model="location.lat" placeholder="lattitude" />
+				<input type="text" ng-model="location.lon" placeholder="longatude" />
+        <button type="submit" class="button-secondary pure-button" ng-click="setMarker(location)">Sumbit</button>
+    </fieldset>
+    <button class="pure-button pure-button-primary" ng-click="getLocation()">Get Location</button>
+</form>
+
