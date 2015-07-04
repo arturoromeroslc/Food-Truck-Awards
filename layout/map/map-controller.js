@@ -1,3 +1,11 @@
+// <form>
+//   <input type="text" ng-model="location.lat" />
+//   <input type="text" ng-model="location.lon" />
+//   <button ng-click="setMarker(location)">Sumbit</button>
+// </form>
+// <button ng-click="getLocation()">Get Location</button>
+// <button ng-click="getLocationFromFireBase()">Push to Firebase</button> 
+
 (function () {
 	'use strict';
 	angular
@@ -55,16 +63,16 @@
          location.lon = position.coords.longitude;
          $scope.setMarker(location);
          $scope.getLocationFromFireBase(location);
-        })
-    }
+        });
+    };
 
-        $scope.getLocationFromFireBase = function(location) {
-            $scope.data.$loaded().then(function(){
-                console.log(location)
-                $scope.data.location = location || {};
-                $scope.data.$save();
-            })
-        }
+    $scope.getLocationFromFireBase = function(location) {
+        $scope.data.$loaded().then(function(){
+            console.log(location)
+            $scope.data.location = location || {};
+            $scope.data.$save();
+        });
+    };
      
       });
-}())
+}());

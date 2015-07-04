@@ -25,7 +25,12 @@
 					}
 				})
 				.when('/feed/:instagramUser', {
-					templateUrl: '/layout/feed/feed.html'
+					templateUrl: '/layout/feed/feed.html',
+					controller: 'InstagramFeedCtrl'
+				})
+				.when('/admin', {
+					templateUrl: '/layout/admin/admin.html',
+					controller: 'AdminCtrl'
 				})
 
 				.otherwise({

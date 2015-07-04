@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+var functionCache = function(cb) {
+	var cache = {};
+	
+	return function(input) {
+		if (cache[input])
+			return cache[input];
+		else {
+			return cache[input] = cb(input)
+		}	
+	};
+};
+
+functionCache(function() {
+	console.log('hello');
+})
+
+
+// var functionInside = functionCache(function() {console.log('inside')})
+
+
+var myFunction = functionCache(function(x) {
+	console.log('I ran');
+	return x * x;
+});
+
+console.log(myFunction(5))
+
+
+</script>
+</body>
+</html>
