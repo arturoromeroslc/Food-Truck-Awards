@@ -6,7 +6,8 @@
 
   function loginCtrl($scope, $log, LoginService) { 
 
-	$log.log('hello');
-
+  	$scope.loginWithGoogle = function() {
+  		LoginService.LoginWithGoogle();
+  	}
 	});   
 }());    

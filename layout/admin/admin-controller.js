@@ -3,7 +3,7 @@
 		.module('foodTruckApp')
 		.controller('AdminCtrl',
 
-	function AdminController($scope, MapService) {
+	function AdminController($scope, MapService, LoginService) {
 		
 		console.log('hello from admin controller');
 
@@ -19,7 +19,12 @@
 	    });
 		};
 
-		MapService.logger()
+		MapService.logger();
+
+		$scope.logout = function() {
+			console.log('loging out...')
+			LoginService.logout();
+		}
 	});
 
 }());
