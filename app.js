@@ -25,6 +25,10 @@
 										}
 					}
 				})
+				.when('/login', {
+					templateUrl: '/layout/login/login.html',
+					controller: 'loginCtrl'
+				})
 				.when('/feed/:instagramUser', {
 					templateUrl: '/layout/feed/feed.html',
 					controller: 'InstagramFeedCtrl'
