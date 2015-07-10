@@ -5,15 +5,27 @@
 		.service('LoginService',
 
 		function LoginService($location, $firebaseAuth, fb) {
+			var ref = new Firebase(fb.url);
+			var authObj = $firebaseAuth(ref);	
 			
+			
+
+			this.isLoggedIn = function() {
+				var info = authObj.$getAuth();
+				
+				if (info) {
+					$location.path('admin');
+				} else {
+					$location.path('login');
+				}
+			} 
+
 			this.LoginWithGoogle = function() {
-				var ref = new Firebase(fb.url);
-				var authObj = $firebaseAuth(ref);	
 
 				authObj.$authWithOAuthPopup('google')
 					.then(function(authData) {
 						console.log('logged in as', authData.google.displayName)
-						$location.path('/admin')
+						$location.path('admin')
 					})
 					.catch(function(error) {
 						console.error('authentication error', error)
@@ -21,8 +33,6 @@
 			};
 
 			this.logout = function() {
-				var ref = new Firebase(fb.url);
-				var authObj = $firebaseAuth(ref);	
 				authObj.$unauth();
 				$location.path('/')
 			}

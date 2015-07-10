@@ -3,12 +3,15 @@
 		.module('foodTruckApp')
 		.controller('AdminCtrl',
 
-	function AdminController($scope, MapService, LoginService) {
+	function AdminController($scope, $location, MapService, LoginService) {
 		
-		console.log('hello from admin controller');
-
+		//TODO centralize in service
+		if ($location.path() === '/admin') { 
+		  LoginService.isLoggedIn();	
+		};
+		//
+	
     $scope.getLocation = function() {
-	    console.log('loading location...')
 	    navigator.geolocation.getCurrentPosition(function gettinLocation(position){
 	     var location = {}
 	     location.lat = position.coords.latitude;
@@ -19,10 +22,7 @@
 	    });
 		};
 
-		MapService.logger();
-
 		$scope.logout = function() {
-			console.log('loging out...')
 			LoginService.logout();
 		}
 	});
