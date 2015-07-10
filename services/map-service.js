@@ -9,10 +9,6 @@
 		var ref = new Firebase(fb.url);     
     var data = $firebaseObject(ref);
 
-		this.logger = function() {
-			$log.log('hello from service');
-		};
-
     this.getLocation = function() {
         console.log('loading location...')
         navigator.geolocation.getCurrentPosition(function gettinLocation(position){
