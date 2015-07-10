@@ -55,16 +55,16 @@
          location.lon = position.coords.longitude;
          $scope.setMarker(location);
          $scope.getLocationFromFireBase(location);
-        })
-    }
+        });
+    };
 
-        $scope.getLocationFromFireBase = function(location) {
-            $scope.data.$loaded().then(function(){
-                console.log(location)
-                $scope.data.location = location || {};
-                $scope.data.$save();
-            })
-        }
+    $scope.getLocationFromFireBase = function(location) {
+        $scope.data.$loaded().then(function(){
+            console.log(location)
+            $scope.data.location = location || {};
+            $scope.data.$save();
+        });
+    };
      
       });
-}())
+}());
