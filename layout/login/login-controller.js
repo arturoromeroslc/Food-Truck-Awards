@@ -2,18 +2,18 @@
 	'use strict';
 	angular
     .module('foodTruckApp')
-    .controller('loginCtrl', 
+    .controller('loginCtrl',
 
-  function loginCtrl($scope, $log, $location, LoginService) { 
+  function loginCtrl($scope, $log, $location, LoginService) {
 
   	//TODO centralize
-   	if ($location.path() === '/login') { 
-		  LoginService.isLoggedIn();	
-		};  	
+   	if ($location.path() === '/login') {
+		  LoginService.isLoggedIn();
+		};
   	//
 
   	$scope.loginWithGoogle = function() {
   		LoginService.LoginWithGoogle();
   	}
-	});   
-}());    
+	});
+}());
