@@ -34,6 +34,11 @@
 						$location.path('admin')
 					})
 					.catch(function(error) {
+						if (error.code === "TRANSPORT_UNAVAILABLE") {
+      // fall-back to browser redirects, and pick up the session
+      // automatically when we come back to the origin page
+      ref.authWithOAuthRedirect("google", function(error) { /* ... */ });
+    }
 						console.error('authentication error', error)
 					})
 			};
