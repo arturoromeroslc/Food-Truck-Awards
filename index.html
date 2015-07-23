@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="foodTruckApp">
 <head>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<title>The Food Truck Awards</title>
-	 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"/>
 	<link rel="stylesheet" href="/css/normalize.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/styles.css"/>
@@ -13,8 +14,12 @@
 <body class="blue-green text-center" ng-controller="MapCtrl">
 	<nav class="center blue-grey blue-font">
 			<span>#Best</span>
-			<a href="#/main" class="border-dash blue-font">Priced <span class="bold">&#8964;</span></a>
-			<span>Food Truck In SLC</span>
+			<a href="#/main" class="border-dash blue-font">Food Truck <span class="bold">&#8964;</span></a>
+			<span>!</span>
+			<span class="right margin_right_1">Map</span>
+			<div>
+				<button class="pure-button pure-button-primary" ng-click="getLocation()">Get Location</button>
+			</div>
 	</nav>
 <ng-view></ng-view>
 <!--Scripts-Libs-->

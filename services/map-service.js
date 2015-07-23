@@ -11,7 +11,7 @@
 
     this.getLocation = function() {
         console.log('loading location...')
-        navigator.geolocation.getCurrentPosition(function gettinLocation(position){
+        navigator.geolocation.getCurrentPosition(function gettingLocation(position){
          var location = {}
          location.lat = position.coords.latitude;
          location.lon = position.coords.longitude;
