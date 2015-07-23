@@ -10,6 +10,9 @@ ul {
 	list-style-type: none;
 }
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.right{
+  float: right;
+}
 
 /*****************
 Navigation
@@ -89,6 +92,9 @@ Guts
 }
 .margin_top_2 {
 	margin-top: 2rem;
+}
+.margin_right_1 {
+  margin-right: 1rem;
 }
 
 
