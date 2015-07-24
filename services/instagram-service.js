@@ -4,7 +4,7 @@
     .module('foodTruckApp')
     .service('InstagramService', 
 
-	function InstagramService($log, $http, $firebase, $firebaseArray, $firebaseObject, fb) { 
+	function InstagramService($http) { 
 		var instagramUsersCalled = {};
 		var instagramUsersArray = [];
 
