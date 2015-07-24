@@ -17,11 +17,11 @@
 					templateUrl: '/layout/main/main.html',
 					controller: 'MainCtrl',
 					resolve: {
-										cupbopData: function($route, MainService) {
-											 MainService.getInstagramUser('1160261459');
+										cupbopData: function($route, InstagramService) {
+											 InstagramService.getInstagramUser('1160261459');
 										},
-										waffluvData: function($route, MainService) {
-											return MainService.getInstagramUser('200882079');
+										waffluvData: function($route, InstagramService) {
+											return InstagramService.getInstagramUser('200882079');
 										}
 					}
 				})
@@ -60,7 +60,7 @@
 	            $mdSidenav(navID)
 	              .toggle()
 	              .then(function () {
-	                $log.debug("toggle " + navID + " is done");
+	                console.debug("toggle " + navID + " is done");
 	              });
 	          },300);
 	      return debounceFn;

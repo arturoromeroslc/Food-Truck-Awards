@@ -13,12 +13,7 @@
 
 			this.isLoggedIn = function() {
 				var info = authObj.$getAuth();
-				
-				if (info) {
-					$location.path('admin');
-				} else {
-					$location.path('login');
-				}
+				info ? $location.path('admin') : $location.path('login'); 
 			}; 
 
 			this.LoginWithGoogle = function() {
@@ -34,12 +29,13 @@
 						$location.path('admin')
 					})
 					.catch(function(error) {
+			      // fall-back to browser redirects, and pick up the session for mobile browsers
+			      // automatically when we come back to the origin page
 						if (error.code === "TRANSPORT_UNAVAILABLE") {
-      // fall-back to browser redirects, and pick up the session
-      // automatically when we come back to the origin page
-      ref.authWithOAuthRedirect("google", function(error) { /* ... */ });
-    }
-						console.error('authentication error', error)
+				      ref.authWithOAuthRedirect("google", function(error) { /* ... */ });
+				    } else {
+								console.error('authentication error', error);
+							}	
 					})
 			};
 

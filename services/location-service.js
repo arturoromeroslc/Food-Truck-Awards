@@ -2,9 +2,9 @@
 	'use strict';
 	angular
 		.module('foodTruckApp')
-		.service('MapService', 
+		.service('LocationService', 
 
-	function MapService($log, $firebaseObject, fb) {
+	function LocationService($log, $firebaseObject, fb) {
 		
 		var ref = new Firebase(fb.url);     
     var data = $firebaseObject(ref);
@@ -12,7 +12,7 @@
     this.getLocation = function() {
         console.log('loading location...')
         navigator.geolocation.getCurrentPosition(function gettingLocation(position){
-         var location = {}
+         var location = {};
          location.lat = position.coords.latitude;
          location.lon = position.coords.longitude;
          // $scope.setMarker(location);
@@ -22,7 +22,7 @@
 
 		this.getLocationFromFireBase = function(location) {
 			data.$loaded().then(function(){
-			    console.log(location)
+			    console.log(location);
 			    data.location = location || {};
 			    data.$save();
 			});

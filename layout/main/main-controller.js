@@ -4,9 +4,9 @@
     .module('foodTruckApp')
     .controller('MainCtrl', 
 
-  function MainCtrl($scope, $log, $firebaseObject, MainService, waffluvData, fb) { 
+  function MainCtrl($scope, $firebaseObject, InstagramService, waffluvData, fb) { 
 
-		$scope.instagramUsers = MainService.getInstagramUsersArray();	
+		$scope.instagramUsers = InstagramService.getInstagramUsersArray();	
 		
 		var ref = new Firebase(fb.url);		
 		$scope.data = $firebaseObject(ref);

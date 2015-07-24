@@ -4,7 +4,7 @@
     .module('foodTruckApp')
     .controller('loginCtrl',
 
-  function loginCtrl($scope, $log, $location, LoginService) {
+  function loginCtrl($scope, $location, LoginService) {
 
   	//TODO centralize
    	if ($location.path() === '/login') {

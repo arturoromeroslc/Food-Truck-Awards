@@ -5,8 +5,8 @@
 		.controller('MapCtrl',
 
 	function MapCtrl($scope, $log, $firebaseObject, fb) {
-        var ref = new Firebase(fb.url);     
-        $scope.data = $firebaseObject(ref);
+    var ref = new Firebase(fb.url);     
+    $scope.data = $firebaseObject(ref);
         
     $scope.FbLocation = $scope.data.$loaded().then(function(){
         var FbLocation = $scope.data.location

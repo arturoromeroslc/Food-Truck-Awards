@@ -3,7 +3,7 @@
 		.module('foodTruckApp')
 		.controller('AdminCtrl',
 
-	function AdminController($scope, $location, MapService, LoginService) {
+	function AdminController($scope, $location, LocationService, LoginService) {
 		
 		//TODO centralize in service
 		if ($location.path() === '/admin') { 
@@ -17,7 +17,7 @@
 	     location.lat = position.coords.latitude;
 	     location.lon = position.coords.longitude;
 	     // $scope.setMarker(location);
-	     MapService.getLocationFromFireBase(location);
+	     LocationService.getLocationFromFireBase(location);
 	     console.log(location)
 	    });
 		};

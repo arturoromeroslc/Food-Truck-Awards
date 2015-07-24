@@ -2,9 +2,9 @@
 	'use strict';
 	angular
     .module('foodTruckApp')
-    .service('MainService', 
+    .service('InstagramService', 
 
-	function MainService($log, $http, $firebase, $firebaseArray, $firebaseObject, fb) { 
+	function InstagramService($log, $http, $firebase, $firebaseArray, $firebaseObject, fb) { 
 		var instagramUsersCalled = {};
 		var instagramUsersArray = [];
 
@@ -28,13 +28,13 @@
 		this.getInstagramFeed = function(userId) {
 			return $http.jsonp('https://api.instagram.com/v1/users/' + userId + '/media/recent?count=40&client_id=f1537afabc07455c820f6a2566076008&callback=JSON_CALLBACK')
 				.then(function dataReturned(res) {
-					var data = res.data.data;
-						var i, max, a = [], b;
-						for (i = 0, max = 33; i < max; i++) { 
-      				b = { image: data[i].images.thumbnail.url };
-				      	a.push(b);
+					var feedData = res.data.data;
+						var i, image, max = 33, arrayOfImages = [];
+						for (i = 0; i < max; i++) { 
+      				image = { image: feedData[i].images.thumbnail.url };
+				      	arrayOfImages.push(image);
 				      }				    
-					return a;
+					return arrayOfImages;
 				});
 		}
 	})
