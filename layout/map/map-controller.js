@@ -39,32 +39,31 @@
         };
       });
     
-     $scope.setMarker = function(location) {
-         $scope.marker.coords.latitude = location.lat;
-         $scope.marker.coords.longitude = location.lon;
-         $scope.map.center.latitude = location.lat;
-         $scope.map.center.longitude = location.lon;
-         $scope.map.zoom = 18;
+    $scope.setMarker = function(location) {
+      $scope.marker.coords.latitude = location.lat;
+      $scope.marker.coords.longitude = location.lon;
+      $scope.map.center.latitude = location.lat;
+      $scope.map.center.longitude = location.lon;
+      $scope.map.zoom = 18;
     }; 
      
-    $scope.getLocation = function() {
-        console.log('loading location...')
-        navigator.geolocation.getCurrentPosition(function gettinLocation(position){
-         var location = {}
-         location.lat = position.coords.latitude;
-         location.lon = position.coords.longitude;
-         $scope.setMarker(location);
-         $scope.getLocationFromFireBase(location);
-        });
-    };
-
-    $scope.getLocationFromFireBase = function(location) {
+    $scope.saveLocationToFirebase = function(location) {
         $scope.data.$loaded().then(function(){
             console.log(location)
             $scope.data.location = location || {};
             $scope.data.$save();
         });
     };
-     
-      });
-}());
+
+    $scope.getLocation = function() {
+        console.log('loading location...')
+        navigator.geolocation.getCurrentPosition(function gettinLocation(position){
+          var location = {}
+          location.lat = position.coords.latitude;
+          location.lon = position.coords.longitude;
+          $scope.setMarker(location);
+          $scope.saveLocationToFirebase(location);
+        });
+    };     
+  });
+})();
