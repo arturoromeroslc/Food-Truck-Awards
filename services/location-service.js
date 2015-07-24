@@ -23,7 +23,6 @@
           var location = {};
           location.lat = position.coords.latitude;
           location.lon = position.coords.longitude;
-           // $scope.setMarker(location);
           self.saveLocationToFirebase(location);
         });
     };

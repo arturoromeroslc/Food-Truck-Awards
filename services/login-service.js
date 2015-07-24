@@ -21,7 +21,6 @@
 				authObj.$authWithOAuthPopup('google')
 					.then(function(authData) {
 						console.log('the logged data', authData);
-						// console.log('logged in as', authData.google.displayName);
 						saveObj = {} 
 						console.log(saveObj);
 						console.log('authObj:', authObj, 'ref:', ref);
@@ -32,7 +31,15 @@
 			      // fall-back to browser redirects, and pick up the session for mobile browsers
 			      // automatically when we come back to the origin page
 						if (error.code === "TRANSPORT_UNAVAILABLE") {
-				      ref.authWithOAuthRedirect("google", function(error) { /* ... */ });
+				      authObj.$authWithOAuthRedirect("google")
+				      .then(function(authData) {
+								console.log('the logged data', authData);
+								saveObj = {} 
+								console.log(saveObj);
+								console.log('authObj:', authObj, 'ref:', ref);
+								// saveObj.$save();
+								$location.path('admin')
+							})
 				    } else {
 								console.error('authentication error', error);
 							}	
