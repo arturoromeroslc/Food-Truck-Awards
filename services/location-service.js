@@ -11,7 +11,7 @@
 
     self.saveLocationToFirebase = function(location) {
       data.$loaded().then(function(){
-          console.log(location);
+          console.log('save location to firebase', location);
           data.location = location || {};
           data.$save();
       });
