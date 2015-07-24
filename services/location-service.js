@@ -20,11 +20,11 @@
     self.getLocation = function() {
         console.log('loading location...')
         navigator.geolocation.getCurrentPosition(function gettingLocation(position){
-         var location = {};
-         location.lat = position.coords.latitude;
-         location.lon = position.coords.longitude;
-         // $scope.setMarker(location);
-         self.saveLocationToFirebase(location);
+          var location = {};
+          location.lat = position.coords.latitude;
+          location.lon = position.coords.longitude;
+           // $scope.setMarker(location);
+          self.saveLocationToFirebase(location);
         });
     };
 	})
