@@ -47,6 +47,14 @@
          $scope.map.zoom = 18;
     }; 
      
+    $scope.saveLocationToFirebase = function(location) {
+        $scope.data.$loaded().then(function(){
+            console.log(location)
+            $scope.data.location = location || {};
+            $scope.data.$save();
+        });
+    };
+
     $scope.getLocation = function() {
         console.log('loading location...')
         navigator.geolocation.getCurrentPosition(function gettinLocation(position){
@@ -54,17 +62,8 @@
          location.lat = position.coords.latitude;
          location.lon = position.coords.longitude;
          $scope.setMarker(location);
-         $scope.getLocationFromFireBase(location);
+         $scope.saveLocationToFirebase(location);
         });
-    };
-
-    $scope.getLocationFromFireBase = function(location) {
-        $scope.data.$loaded().then(function(){
-            console.log(location)
-            $scope.data.location = location || {};
-            $scope.data.$save();
-        });
-    };
-     
+    };     
       });
 }());

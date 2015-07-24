@@ -5,27 +5,27 @@
 		.service('LocationService', 
 
 	function LocationService($log, $firebaseObject, fb) {
-		
-		var ref = new Firebase(fb.url);     
-    var data = $firebaseObject(ref);
+		var self = this,
+		    ref = new Firebase(fb.url),     
+        data = $firebaseObject(ref);
 
-    this.getLocation = function() {
+    self.saveLocationToFirebase = function(location) {
+      data.$loaded().then(function(){
+          console.log(location);
+          data.location = location || {};
+          data.$save();
+      });
+    };
+
+    self.getLocation = function() {
         console.log('loading location...')
         navigator.geolocation.getCurrentPosition(function gettingLocation(position){
          var location = {};
          location.lat = position.coords.latitude;
          location.lon = position.coords.longitude;
          // $scope.setMarker(location);
-         getLocationFromFireBase(location);
+         self.saveLocationToFirebase(location);
         });
     };
-
-		this.getLocationFromFireBase = function(location) {
-			data.$loaded().then(function(){
-			    console.log(location);
-			    data.location = location || {};
-			    data.$save();
-			});
-		};
 	})
 })();

@@ -12,14 +12,7 @@
 		//
 	
     $scope.getLocation = function() {
-	    navigator.geolocation.getCurrentPosition(function gettingLocation(position){
-	     var location = {}
-	     location.lat = position.coords.latitude;
-	     location.lon = position.coords.longitude;
-	     // $scope.setMarker(location);
-	     LocationService.getLocationFromFireBase(location);
-	     console.log(location)
-	    });
+	  	LocationService.getLocation();
 		};
 
 		$scope.logout = function() {
