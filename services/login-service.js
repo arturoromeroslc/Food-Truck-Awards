@@ -22,8 +22,8 @@
 					.then(function(authData) {
 						console.log('the logged data', authData);
 						saveObj = {} 
-						console.log(saveObj);
-						console.log('authObj:', authObj, 'ref:', ref);
+						// console.log(saveObj);
+						// console.log('authObj:', authObj, 'ref:', ref);
 						// saveObj.$save();
 						$location.path('admin')
 					})
@@ -33,10 +33,10 @@
 						if (error.code === "TRANSPORT_UNAVAILABLE") {
 				      authObj.$authWithOAuthRedirect("google")
 				      .then(function(authData) {
-								console.log('the logged data', authData);
+								console.log('mobile error was able to login in', authData);
 								saveObj = {} 
-								console.log(saveObj);
-								console.log('authObj:', authObj, 'ref:', ref);
+								// console.log(saveObj);
+								// console.log('authObj:', authObj, 'ref:', ref);
 								// saveObj.$save();
 								$location.path('admin')
 							})

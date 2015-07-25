@@ -18,7 +18,7 @@
 			} else if ($routeParams.instagramUser === 'waffluv') {
 				$scope.getInstagramFeed('200882079');
 				};
-
+				
 			 // $scope.myInterval = 3000;
 		  //  var slides = $scope.slides = [];
 		   
@@ -27,8 +27,6 @@
 		  // };
 		  // for (var i=0; i<4; i++) {
 		  //   $scope.addSlide();
-		  // }	
-
-
+		  // }
 	});   
 }()); 

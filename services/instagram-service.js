@@ -30,7 +30,7 @@
 				.then(function dataReturned(res) {
 					var feedData = res.data.data;
 						var i, image, max = 33, arrayOfImages = [];
-						for (i = 0; i < max; i++) { 
+						for (i = 0; i < max; i += 1) { 
       				image = { image: feedData[i].images.thumbnail.url };
 				      	arrayOfImages.push(image);
 				      }				    
