@@ -1,9 +1,19 @@
-<section class="instagram-main text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers">
-	<div>
-		<a ng-href="#/feed/{{user.username}}"><img ng-src="{{user.profile_picture}}" alt="{{user.full_name}}" /></a>
-		<h2>{{user.full_name}}</h2>
-		<h3 ng-if="data.users[user.id].voteCount">Total Votes: {{data.users[user.id].voteCount}}</h3>
-		<p>{{user.bio}}</p>
-		<a ng-click="addVotes(user.id)" class="small-round-button">+1</a>
-	</div>
-</section>
+<ul class="normal-ul">
+  <li class="flex-container instagram-main text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers">
+    <div>
+  		<a class="thumbnail" ng-href="#/feed/{{user.username}}">
+        <img ng-src="{{user.profile_picture}}" height="75" width="75"  alt="{{user.full_name}}" />
+      </a>
+      <a ng-href="#/feed/{{user.username}}">
+        <h2 class="name">{{user.full_name}}</h2>
+      </a>
+    </div>
+    <div>
+      <div class="info">
+    		<p class="bio">{{user.bio}}</p>
+    		<!-- <a ng-click="addVotes(user.id)" class="small-round-button">+1</a> -->
+      </div>
+    </div>  
+    <h3 class="votes" ng-if="data.users[user.id].voteCount">Total Votes {{data.users[user.id].voteCount}}</h3>
+  </li>
+</ul>

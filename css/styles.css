@@ -46,12 +46,46 @@ nav {
 /*****************
 Section -- Images
 *****************/
+.normal-ul {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.flex-container {
+  display: flex;
+}
 .off-white {
 	color: #f7f7f7;
 }
-section.instagram-main {
-	height: 400px;
-	margin-top: 3rem;
+.instagram-main {
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.thumbnail {
+/*  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 75px;
+  height: 75px;*/
+}
+.name {
+  text-align: left;
+  font-size: .8em;
+  margin: 0;
+}
+.info {
+  font-size: .8em;
+  padding: 0 8px 0 60px;
+}
+.bio {
+  margin: 0;
+}
+.votes {
+  margin: .02em 0;
 }
 section {
 	padding-left: 0;
@@ -102,7 +136,7 @@ Guts
 List Icons
 *****************/
 ul {
-	border-right: 1px solid white;
+	/*border-right: 1px solid white;*/
 	padding-left: 0px;
 	padding-right: 0.625rem;
 }
