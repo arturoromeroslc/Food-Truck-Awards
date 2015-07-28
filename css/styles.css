@@ -53,6 +53,7 @@ Section -- Images
 }
 .flex-container {
   display: flex;
+  display: -webkit-flex;
 }
 .off-white {
 	color: #f7f7f7;
@@ -141,8 +142,10 @@ ul {
 	padding-right: 0.625rem;
 }
 ul.list-inline {
-	display: flex;
-	flex-direction: row; 
+  display: flex;
+	display: -webkit-flex;
+  flex-direction: row; 
+	-webkit-flex-direction: row; 
 	justify-content: space-between;
 	margin-left: auto;
 	margin-right: auto;
