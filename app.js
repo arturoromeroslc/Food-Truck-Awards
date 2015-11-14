@@ -17,12 +17,12 @@
 					templateUrl: '/layout/main/main.html',
 					controller: 'MainCtrl',
 					resolve: {
-										cupbopData: function($route, InstagramService) {
-											 InstagramService.getInstagramUser('1160261459');
-										},
-										waffluvData: function($route, InstagramService) {
-											return InstagramService.getInstagramUser('200882079');
-										}
+						cupbopData: function($route, InstagramService) {
+								InstagramService.getInstagramUser('1160261459');
+						},
+						waffluvData: function($route, InstagramService) {
+							return InstagramService.getInstagramUser('200882079');
+						}
 					}
 				})
 				.when('/login', {

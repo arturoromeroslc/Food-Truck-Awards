@@ -20,6 +20,7 @@
 			})
 
 		};	
-
+		
+		$scope.foodTruckName   = '';		
 	});   
 }());    
