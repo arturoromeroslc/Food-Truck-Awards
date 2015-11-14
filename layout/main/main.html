@@ -1,5 +1,6 @@
 <ul class="normal-ul">
-  <li class="flex-container instagram-main text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers" ng-click="#/feed/{{user.username}}">
+  <input ng-model="foodTruckName" type="text" class="border-dash blue-font" placeholder="Find Food Truck">
+  <li class="flex-container instagram-main text-center padding-all-1_25 off-white" ng-repeat="user in instagramUsers | filter:foodTruckName" ng-click="#/feed/{{user.username}}">
     <div>
   		<a class="thumbnail" ng-href="#/feed/{{user.username}}">
         <img ng-src="{{user.profile_picture}}" height="75" width="75"  alt="{{user.full_name}}" />

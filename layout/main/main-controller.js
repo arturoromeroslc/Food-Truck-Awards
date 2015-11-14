@@ -4,7 +4,7 @@
     .module('foodTruckApp')
     .controller('MainCtrl', 
 
-  function MainCtrl($scope, $firebaseObject, InstagramService, waffluvData, fb) { 
+  function MainCtrl($scope, $firebaseObject, InstagramService, fb) { 
 
 		$scope.instagramUsers = InstagramService.getInstagramUsersArray();	
 		
@@ -20,6 +20,7 @@
 			})
 
 		};	
-
+		
+		$scope.foodTruckName   = '';		
 	});   
 }());    
