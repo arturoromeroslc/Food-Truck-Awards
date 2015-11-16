@@ -1,17 +1,22 @@
 (function() {
 	angular
 		.module('foodTruckApp', [
+			'ui.router',
 			'ngRoute',
 			'firebase',
 			'uiGmapgoogle-maps',
+			'angular-md5',
 			'ngTouch',
 			'ngAnimate',
 			'ngMaterial'
 		])
+		
 		.constant('fb', {
 			url: 'https://foodtruckawards.firebaseio.com'
 		})
+		
 		.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
+			
 			$routeProvider
 				.when('/main', {
 					templateUrl: '/layout/main/main.html',
@@ -25,29 +30,14 @@
 						}
 					}
 				})
-				.when('/login', {
-					templateUrl: '/layout/login/login.html',
-					controller: 'loginCtrl'
-				})
-				.when('/feed/:instagramUser', {
-					templateUrl: '/layout/feed/feed.html',
-					controller: 'InstagramFeedCtrl'
-				})
-				.when('/admin', {
-					templateUrl: '/layout/admin/admin.html',
-					controller: 'AdminCtrl'
-				})
-
-				.otherwise({
-					redirectTo: '/main'
-				})
-
-		  uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyBhzHAgDTYOe5iGRFs2B0_bN30mWSGJly8',
-        v: '3.17',
-        libraries: 'weather,geometry,visualization'
-    	});		
+				
+			  uiGmapGoogleMapApiProvider.configure({
+	        key: 'AIzaSyBhzHAgDTYOe5iGRFs2B0_bN30mWSGJly8',
+	        v: '3.17',
+	        libraries: 'weather,geometry,visualization'
+	    	});		
 		})
+		
 		.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
 	    $scope.toggleLeft = buildToggler('left');
 	    $scope.toggleRight = buildToggler('right');
