@@ -4,9 +4,9 @@
 		.module('foodTruckApp')
 		.service('LocationService', 
 
-	function LocationService($log, $firebaseObject, fb) {
+	function LocationService($log, $firebaseObject, FIREBASE) {
 		var self = this,
-		    ref = new Firebase(fb.url),     
+		    ref = new Firebase(FIREBASE.url),     
         data = $firebaseObject(ref);
 
     self.saveLocationToFirebase = function(location) {

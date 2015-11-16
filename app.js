@@ -1,16 +1,20 @@
 (function() {
 	angular
 		.module('foodTruckApp', [
+			'ui.router',
 			'ngRoute',
 			'firebase',
 			'uiGmapgoogle-maps',
+			'angular-md5',
 			'ngTouch',
 			'ngAnimate',
 			'ngMaterial'
 		])
-		.constant('fb', {
+		
+		.constant('FIREBASE', {
 			url: 'https://foodtruckawards.firebaseio.com'
 		})
+		
 		.config(function($routeProvider, uiGmapGoogleMapApiProvider) {
 			$routeProvider
 				.when('/main', {
@@ -26,8 +30,8 @@
 					}
 				})
 				.when('/login', {
-					templateUrl: '/layout/login/login.html',
-					controller: 'loginCtrl'
+					templateUrl: '/layout/auth/auth-view.html',
+					controller: 'AuthController as auth'
 				})
 				.when('/feed/:instagramUser', {
 					templateUrl: '/layout/feed/feed.html',
@@ -48,6 +52,7 @@
         libraries: 'weather,geometry,visualization'
     	});		
 		})
+		
 		.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $mdUtil, $log) {
 	    $scope.toggleLeft = buildToggler('left');
 	    $scope.toggleRight = buildToggler('right');

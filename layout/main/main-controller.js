@@ -4,11 +4,11 @@
     .module('foodTruckApp')
     .controller('MainCtrl', 
 
-  function MainCtrl($scope, $firebaseObject, InstagramService, fb) { 
+  function MainCtrl($scope, $firebaseObject, InstagramService, FIREBASE) { 
 
 		$scope.instagramUsers = InstagramService.getInstagramUsersArray();	
 		
-		var ref = new Firebase(fb.url);		
+		var ref = new Firebase(FIREBASE.url);		
 		$scope.data = $firebaseObject(ref);
 
 		$scope.addVotes = function(userId) {

@@ -18,30 +18,35 @@
 	</nav>
 <ng-view></ng-view>
 
-<!--Scripts-Libs-->
+<!-- Application Dependencies -->
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.2.6/firebase.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/angular-md5/angular-md5.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-touch.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-aria.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-<script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
 <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 <script src='/bower_components/lodash/lodash.min.js'></script>
 <script src='/bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
-<script src="js-libs/owl.carousel.min.js"></script>
-<!--App Scripts-->
+<script src="/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+
+	<!-- Application Scripts -->
 <script src="/app.js"></script>
 <script src="/services/instagram-service.js"></script>
 <script src="/services/location-service.js"></script>
 <script src="/services/login-service.js"></script>
+<script src="/services/auth-service.js"></script>
+<script src="/services/user-service.js"></script>
 <script src="/layout/main/main-controller.js"></script>
 <script src="/layout/feed/instagram-feed-ctrl.js"></script>
 <script src="/layout/map/map-controller.js"></script>
-<script src="/layout/feed/feed-carousel.directive.js"></script>
+<script src="/directives/feed-carousel/feed-carousel.directive.js"></script>
 <script src="/layout/admin/admin-controller.js"></script>
-<script src="/layout/login/login-controller.js"></script>
+<script src="/layout/auth/auth-controller.js"></script>
 </body>
 </html>

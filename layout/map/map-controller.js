@@ -2,11 +2,11 @@
 	'use strict';
 	angular
 		.module('foodTruckApp')
-		.controller('MapCtrl',
+		.controller('MapCtrl', MapCtrl);
 
-	function MapCtrl($scope, $log, $firebaseObject, fb) {
+	function MapCtrl($scope, $log, $firebaseObject, FIREBASE) {
     
-    var ref = new Firebase(fb.url);     
+    var ref = new Firebase(FIREBASE.url);     
     $scope.data = $firebaseObject(ref);
         
     $scope.FbLocation = $scope.data.$loaded().then(function(){
@@ -66,5 +66,5 @@
           $scope.saveLocationToFirebase(location);
         });
     };     
-  });
+  };
 })();
