@@ -4,8 +4,8 @@
 		.module('foodTruckApp')
 		.service('LoginService',
 
-		function LoginService($location, $firebaseAuth, $firebaseObject, fb) {
-			var ref = new Firebase(fb.url);
+		function LoginService($location, $firebaseAuth, $firebaseObject, FIREBASE) {
+			var ref = new Firebase(FIREBASE.url);
 			var saveObj = $firebaseObject(ref);
 			var authObj = $firebaseAuth(ref);	
 			

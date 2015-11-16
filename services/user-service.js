@@ -6,7 +6,7 @@
     .module('foodTruckApp')
     .factory('User', UserService);
 
-  function UserService($firebaseObject, fb) {
+  function UserService($firebaseObject, FIREBASE) {
 
     function newUserRef(user) {
       var ref = new Firebase("https://foodtruckawards.firebaseio.com/users/" + user.uid);

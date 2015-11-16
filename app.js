@@ -11,7 +11,7 @@
 			'ngMaterial'
 		])
 		
-		.constant('fb', {
+		.constant('FIREBASE', {
 			url: 'https://foodtruckawards.firebaseio.com'
 		})
 		
@@ -30,7 +30,7 @@
 					}
 				})
 				.when('/login', {
-					templateUrl: '/layout/login/login.html',
+					templateUrl: '/layout/auth/auth-view.html',
 					controller: 'AuthController as auth'
 				})
 				.when('/feed/:instagramUser', {
