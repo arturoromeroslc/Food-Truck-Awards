@@ -2,18 +2,63 @@
 	'use strict';
 	angular
     .module('foodTruckApp')
-    .controller('loginCtrl',
+    .controller('AuthController', AuthController);
 
-  function loginCtrl($scope, $location, LoginService) {
+  function AuthController($location, Auth, User) {
+    console.log(Auth, User)
+    var vm = this;
 
-  	//TODO centralize
-   	if ($location.path() === '/login') {
-		  LoginService.isLoggedIn();
-		};
-  	//
+    vm.createUser = createUser;
+    vm.login = login;
 
-  	$scope.loginWithGoogle = function() {
-  		LoginService.LoginWithGoogle();
-  	}
-	});
-}());
+    function createUser() {
+console.log('hi');
+      // If there is already a user logged in,
+      // log them out before proceeding
+      Auth.$unauth();
+
+      Auth.$createUser({
+        email: vm.email,
+        password: vm.password
+      }).then(function(userData) {
+        saveUser(userData);
+        login()
+      }).catch(function(error) {
+        vm.error = error;
+      });
+    }
+
+    function saveUser(userData) {
+
+      var user = User.newUserRef(userData);
+      user.username = vm.username;
+      user.email = vm.email;
+
+      user.$save().then(function(success) {
+        vm.username = null;
+        vm.email = null;
+        vm.password = null;
+
+        $location.path('/admin');
+      }, function(error) {
+        console.log("there was an error! " + error);
+      });
+    }
+
+    function login() {
+
+      Auth.$authWithPassword({
+
+        email: vm.email,
+        password: vm.password
+      }).then(function(data) {
+        vm.email = null;
+        vm.password = null;
+        $location.path('/admin');
+      }).catch(function(error) {
+        console.log(error);
+      });
+    }
+  }
+
+})();
