@@ -31,11 +31,11 @@
 
       var user = User.newUserRef(userData);
       user.username = vm.username;
-      user.email = vm.email;
+      user.email    = vm.email;
 
       user.$save().then(function(success) {
         vm.username = null;
-        vm.email = null;
+        vm.email    = null;
         vm.password = null;
 
         $location.path('/admin');
@@ -51,6 +51,7 @@
         email: vm.email,
         password: vm.password
       }).then(function(data) {
+        console.log(data);
         vm.email = null;
         vm.password = null;
         $location.path('/admin');

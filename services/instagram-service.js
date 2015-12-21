@@ -5,8 +5,8 @@
     .service('InstagramService', 
 
 	function InstagramService($http) { 
-		var instagramUsersCalled = {};
-		var instagramUsersArray = [];
+		var instagramUsersCalled	= {},
+			instagramUsersArray 	= [];
 
 		this.getInstagramUser = function(userId) { 
 			if (instagramUsersCalled.userId === true) {

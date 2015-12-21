@@ -5,9 +5,9 @@
 		.service('LoginService',
 
 		function LoginService($location, $firebaseAuth, $firebaseObject, FIREBASE) {
-			var ref = new Firebase(FIREBASE.url);
-			var saveObj = $firebaseObject(ref);
-			var authObj = $firebaseAuth(ref);	
+			var ref 	= new Firebase(FIREBASE.url),
+				saveObj = $firebaseObject(ref),
+				authObj = $firebaseAuth(ref);	
 			
 			
 
